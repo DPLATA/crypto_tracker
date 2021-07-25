@@ -1,37 +1,41 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-import COIN from './COIN.js'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import COIN from "./COIN";
 
 function CENTRAL_HUB() {
+  const API_URL =
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false";
+  const [coins, setCoins] = useState([]);
 
-const API = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
-const [coins, setCoins] = useState([])
-
-
-useEffect(() => {
+  useEffect(() => {
     axios
-    .get(API)
-    .then(res => {
-        console.log(res)
-        setCoins(res.data)
-    },)
-    .catch(err => {
-        console.log(err)
-    })
-}, [])
+      .get(API_URL)
+      .then((res) => {
+        console.log(res);
+        setCoins(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
-
-    return (
-        <div>
-            {coins.map(coin => 
-                <COIN key= {coin.id} id={coin.id} name={coin.name} img={coin.image} 
-                symbol= {coin.symbol} price={coin.current_price} 
-                high= {coin.high_24h} low= {coin.low_24h} marketcap= {coin.market_cap}/>
-                
-            )}
-        </div>
-    )
+  return (
+    <div>
+      {coins.map((coin) => (
+        <COIN
+          key={coin.id}
+          id={coin.id}
+          name={coin.name}
+          img={coin.image}
+          symbol={coin.symbol}
+          price={coin.current_price}
+          high={coin.high_24h}
+          low={coin.low_24h}
+          marketcap={coin.market_cap}
+        />
+      ))}
+    </div>
+  );
 }
 
-export default CENTRAL_HUB
+export default CENTRAL_HUB;
