@@ -1,0 +1,1 @@
+TODO: Create functional component that renders a single ccrypto
