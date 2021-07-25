@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import Coin from './Coin.js'
+import COIN from './COIN.js'
 
 function CENTRAL_HUB() {
 
@@ -25,7 +25,7 @@ useEffect(() => {
     return (
         <div>
             {coins.map(coin => 
-                <Coin key= {coin.id} id={coin.id} name={coin.name} img={coin.image} 
+                <COIN key= {coin.id} id={coin.id} name={coin.name} img={coin.image} 
                 symbol= {coin.symbol} price={coin.current_price} 
                 high= {coin.high_24h} low= {coin.low_24h} marketcap= {coin.market_cap}/>
                 
