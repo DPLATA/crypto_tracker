@@ -1,0 +1,1 @@
+TODO: create functional component that retrieves crypto info from coingecko
