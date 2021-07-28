@@ -3,12 +3,11 @@ import '../css/COIN_STYLES.css'
 
 function COIN(props) {
 
-    const { name, symbol, img, price, high, low, marketcap } = props
-    const coin_id = name.toLowerCase()
+    const { name, symbol, img, price, high, low, marketcap, id } = props
 
     return (
     //TODO: from now on remember to set data-testid attributes to html elements for testing purposes
-        <div className= 'Coin-item' data-testid={coin_id}>
+        <div className= 'Coin-item' data-testid={id}>
             <div className='Coin-spec'>{name}</div>
             <div className='Coin-spec'>{symbol}</div>
             {/* TODO: add an alt attribute to img tag */}
