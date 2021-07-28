@@ -7,7 +7,7 @@ afterEach(() => {
 })
 
 test('Should render COIN component',async () => {
-    const TESTABLE_COINS = ['bitcoin', 'ethereum', 'dogecoin', 'cardano', 'chainlink', 'polkadot', 'litecoin', 'dai', 'monero', 'neo']
+    const TESTABLE_COINS = ['bitcoin', 'ethereum', 'binancecoin', 'dogecoin', 'cardano', 'chainlink', 'polkadot', 'litecoin', 'dai', 'monero', 'neo', 'ripple', 'crypto-com-chain', 'shiba-inu']
 
     const API_URL = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
     const COINS = await axios.get(API_URL).then(response => {
@@ -24,7 +24,7 @@ test('Should render COIN component',async () => {
     ))
 
     for (let index = 0; index < TESTABLE_COINS.length / 2; index++) {
-        random_coin = TESTABLE_COINS[Math.floor(Math.random() * (6-0) + 0)]
+        random_coin = TESTABLE_COINS[Math.floor(Math.random() * (TESTABLE_COINS.length))]
         
         expect(screen.getByTestId(random_coin)).toBeInTheDocument()
     }
