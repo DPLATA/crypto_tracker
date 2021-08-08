@@ -1,0 +1,28 @@
+.search-div{
+    position: absolute;
+    font-size: 0.9rem;
+    top: 0.3em;
+    left: 70%;
+    width: 30%;
+    height: 70%;
+}
+
+.searchbar {
+    width: 70%;
+    background-color: gray;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.drop-search {
+    top: 0.5em;
+    background-color: white;
+    width: 70%;
+    max-height: 60%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items:space-between;
+    justify-content: space-around;
+    border: 0.2em solid black
+}
