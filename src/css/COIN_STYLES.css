@@ -10,7 +10,7 @@ h3 {
     display: grid;
     grid-template-columns: 7fr;
     grid-template-rows: auto;
-    margin: 6em;
+    margin: 5em;
 
 }
 
@@ -37,13 +37,22 @@ h3 {
     padding: 1em;
 }
 
+.Coin-item:hover{
+    background-color: rgba(249, 253, 223, 0.4);
+}
+
 .Coin-spec {
     flex-basis: 20%;
-    
 }
 
 .Coin-image {
     width: 20%;
     height: auto;
+}
+
+.anch {
+    text-decoration: none;
+    font-weight: bold;
+    color: black
 }
 

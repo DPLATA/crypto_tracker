@@ -32,6 +32,7 @@ useEffect(() => {
        
        <div className='Coin-grid'>
             <div className='headers'>
+                <div className='header-item'> Rank </div>
                 <div className='header-item'> Currency </div>
                 <div className='header-item'> Symbol </div>
                 <div className='header-item'> Tag </div>
@@ -43,7 +44,8 @@ useEffect(() => {
         
         
             {coins.map(coin => 
-                <COIN key={coin.id} id={coin.id} name={coin.name} img={coin.image} 
+                <COIN key={coin.id}
+                rank={coin.market_cap_rank} id={coin.id} name={coin.name} img={coin.image} 
                 symbol={coin.symbol} price={coin.current_price} 
                 high={coin.high_24h} low={coin.low_24h} marketcap={coin.market_cap}/>
             )}

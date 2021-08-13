@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import '../css/SINGLE_COIN_STYLES.css'
+import SINGLE_BAR from './SINGLE_BAR'
 
 
 function SINGLE_COIN(props) {
@@ -12,6 +14,7 @@ function SINGLE_COIN(props) {
     const SINGLE_API = `https://api.coingecko.com/api/v3/coins/${id}?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true`
 
     const [coin, setCoin] = useState({})
+    const [status, setStatus] = useState('')
 
 
      useEffect(() => {
@@ -19,6 +22,7 @@ function SINGLE_COIN(props) {
         .get(SINGLE_API)
         .then(res => {
             setCoin(res.data)
+            setStatus(res.status)
             console.log(res.data)
         })
         .catch(error => {
@@ -26,15 +30,26 @@ function SINGLE_COIN(props) {
         })
         }, [])
 
+        const stripHtml = (text) => {
+            let doc = new DOMParser().parseFromString(text, 'text/html');
+            return doc.body.textContent || "";
+
+        }
+
 
     return (
 
 
         <div>
-            <h2>{coin?.name}</h2> 
-            <div>{coin?.public_interest_score}</div>
-            <div>{coin?.developer_data?.forks}</div>  
-            <div>{coin?.description?.en}</div>
+            {status !== 200 ? 
+            <h3>Loading...</h3> :
+            <div className= 'parent-grid'>
+            <h2 className = 'coin-name'>{coin?.name}</h2> 
+            <img src={coin?.image?.small} alt='coin symbol'/> 
+            <div className='price-bar'><SINGLE_BAR className='price-bar' data={coin.market_data}/></div>
+            <div className = 'coin-description'>{stripHtml(coin?.description?.en)}</div>
+            </div>
+            }
         </div>
 
     )
