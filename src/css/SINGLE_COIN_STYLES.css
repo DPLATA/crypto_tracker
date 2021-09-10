@@ -1,3 +1,9 @@
+.loading-bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
 .parent-grid {
     display: grid;
     padding: 1em;
@@ -6,8 +12,35 @@
 }
 
 .coin-name {
-    grid-column: 1 / 3;
+    grid-column: 1 / 2;
     grid-row: 1 / 2;
+    display: block;
+}
+
+.coin-price {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: flex;
+    float: right;
+    height: fit-content;
+}
+
+.daily-change {
+    background-color: rgb(59, 201, 59);
+    position: relative;
+    padding: 0.4em;
+    border-radius: 10%;
+    color: white;
+    font-weight: bold;  
+}
+
+.daily-change-neg {
+    background-color: rgb(190, 57, 23);
+    position: relative;
+    padding: 0.4em;
+    border-radius: 10%;
+    color: white;
+    font-weight: bold;  
 }
 
 .coin-description {
@@ -17,19 +50,19 @@
     text-align: justify;
 }
 
+.community-bar {
+    grid-column: 3 / 4;
+    grid-row: 2;
+    height: 100%;
+    margin: 0 1em 2em 0;
+}
+
 .price-bar {
     grid-column: 1 / 4;
-    grid-row: 2 / 3;
+    grid-row: 3 / 5;
+    height: 100%
+    
 }
 
-.single-bar-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
 
-.single-bar-container  > div > ul {
-    list-style: none;
-}
 

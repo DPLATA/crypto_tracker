@@ -1,6 +1,8 @@
 import CENTRAL_HUB from './components/CENTRAL_HUB.js';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SINGLE_COIN from './components/SINGLE_COIN.js';
+import DARKMODEBUTTON from './components/DARKMODEBUTTON.js';
+
 
 
 
@@ -11,6 +13,7 @@ function App() {
   return (
     <Router>
     <div className="App">
+      <DARKMODEBUTTON />
       <Switch>
         <Route exact strict path="/"> 
           <CENTRAL_HUB/> 
