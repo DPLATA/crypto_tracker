@@ -1,17 +1,24 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../css/COIN_STYLES.css';
 
 function COIN(props) {
 	const { name, symbol, img, price, high, low, marketcap, id } = props;
 
+	const { name, symbol, img, price, high, low, marketcap, id, rank } = props;
+
 	return (
-		//TODO: from now on remember to set data-testid attributes to html elements for testing purposes
 		<div className='Coin-item' data-testid={id}>
-			<div className='Coin-spec'>{name}</div>
-			<div className='Coin-spec'>{symbol}</div>
-			{/* TODO: add an alt attribute to img tag */}
+			<div className='Coin-spec'>{rank}</div>
 			<div className='Coin-spec'>
-				<img className='Coin-image' src={img} />{' '}
+				{' '}
+				<Link className='anch' to={`/${id}`}>
+					{name}
+				</Link>
+			</div>
+			<div className='Coin-spec'>{symbol}</div>
+			<div className='Coin-spec'>
+				<img className='Coin-image' src={img} alt='coin-tag' />{' '}
 			</div>
 			<div className='Coin-spec'>{price}</div>
 			<div className='Coin-spec'>{high}</div>

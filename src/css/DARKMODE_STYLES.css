@@ -1,0 +1,45 @@
+.Dark-button {
+	cursor: pointer;
+	width: 3.5%;
+	display: flex;
+	justify-content: space-between;
+	border: 0.1em solid #111;
+	border-radius: 30%;
+	padding: 0.4%;
+	position: fixed;
+	left: 95%;
+	top: 1%;
+	background-color: #111;
+	z-index: 10;
+}
+
+.sun {
+	color: orange;
+}
+
+.moon {
+	color: rgb(250, 224, 79);
+}
+.ball {
+	position: absolute;
+	background-color: rgb(240, 238, 238);
+	height: 80%;
+	width: 40%;
+	top: 0.17em;
+	right: 0.18em;
+	border-radius: 50%;
+	transform: translateX(0em);
+	transition: transform 0.2s linear;
+}
+
+.dark-ball {
+	position: absolute;
+	background-color: rgb(240, 238, 238);
+	height: 80%;
+	width: 40%;
+	top: 0.17em;
+	right: 0.18em;
+	border-radius: 50%;
+	transform: translateX(-1.82em);
+	transition: transform 0.2s linear;
+}
