@@ -3,6 +3,7 @@ import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import '../css/SINGLE_COIN_STYLES.css'
+import PRICE_CHART from './PRICE_CHART'
 import SINGLE_BAR from './SINGLE_BAR'
 import SINGLE_COIN_COMMUNITY from './SINGLE_COIN_COMMUNITY'
 
@@ -69,6 +70,9 @@ function SINGLE_COIN(props) {
                 
                     <div className='price-bar'>
                         <SINGLE_BAR data={coin.market_data} symbol={coin.symbol}/>
+                    </div>
+                    <div className ='chart-container'>
+                    <PRICE_CHART id ={id}/>
                     </div>
             </div>
             }
