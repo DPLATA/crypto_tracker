@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import '../css/COIN_STYLES.css';
 
 function COIN(props) {
-
 	const { name, symbol, img, price, high, low, marketcap, id, rank } = props;
 
 	return (
