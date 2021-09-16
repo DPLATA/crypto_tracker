@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import { select, axisLeft } from 'd3'
 
-function AXISLEFT( {innerWidth, yScale }) {
+function AXIS_LEFT( { innerWidth, yScale }) {
 
 const ref = useRef();
   useEffect(() => {
@@ -11,7 +11,7 @@ const ref = useRef();
     .tickPadding(10)
 
     yAxisG.call(yAxis);
-  }, []);
+  }, [yScale, innerWidth]);
 
 
     return (
@@ -20,4 +20,4 @@ const ref = useRef();
     )
 }
 
-export default AXISLEFT
+export default AXIS_LEFT

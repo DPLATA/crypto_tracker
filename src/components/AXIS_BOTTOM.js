@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import { select, axisBottom } from 'd3'
 
-function AXISBOTTOM( {xScale, innerHeight }) {
+function AXIS_BOTTOM( { xScale, innerHeight } ) {
 
   const ref = useRef()
   
@@ -10,7 +10,7 @@ function AXISBOTTOM( {xScale, innerHeight }) {
     const xAxis = axisBottom(xScale)
       .tickPadding(18);
     xAxisG.call(xAxis);
-  }, []);
+  }, [xScale]);
 
 
     return (
@@ -20,4 +20,4 @@ function AXISBOTTOM( {xScale, innerHeight }) {
     )
 }
 
-export default AXISBOTTOM
+export default AXIS_BOTTOM

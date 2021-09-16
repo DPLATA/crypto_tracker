@@ -3,9 +3,7 @@ import '../css/COMMUNITY_STYLES.css'
 import { FaTwitterSquare, FaGithub, FaReddit } from 'react-icons/fa'
 
 
-function SINGLE_COIN_COMMUNITY( { site, github, explorers, twitter, reddit}) {
-
-    //console.log(explorers, site);
+function SINGLE_COIN_COMMUNITY( { site, github, explorers, twitter, reddit }) {
 
     const findExplorer = (str) => {
         let end = 0

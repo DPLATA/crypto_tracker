@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
-import {scaleLinear, extent, scaleTime, line, curveNatural, select, axisBottom, svg } from 'd3'
-import AXISBOTTOM from './AXISBOTTOM'
-import AXISLEFT from './AXISLEFT'
+import { scaleLinear, extent, scaleTime, line, curveNatural } from 'd3'
+import AXIS_BOTTOM from './AXIS_BOTTOM'
+import AXIS_LEFT from './AXIS_LEFT'
 
 
 function PRICE_CHART( { id }) {
@@ -13,7 +13,7 @@ function PRICE_CHART( { id }) {
     //const [prices, setPrices] = useState()
     //const [dates, setDates] = useState()
 
-    const hisURL = `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=90&interval=daily`
+    const historyURL = `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=90&interval=daily`
 
     //const xValues = []
     //const yValues = []
@@ -26,13 +26,15 @@ function PRICE_CHART( { id }) {
     
     useEffect(() => {
         axios
-        .get(hisURL)
+        .get(historyURL)
         .then(res => {
             setHistory(res.data) 
+            console.log(res.data)
         })
         .catch(err => console.log(err))
+        
 
-    }, [])
+    }, [historyURL])
     
 
             
@@ -56,7 +58,7 @@ function PRICE_CHART( { id }) {
     const xAxis = axisBottom(xScale)
     svg.select('.x-axis').call(xAxis)*/
 
-    console.log(xScale)
+    
     
 
         
@@ -64,8 +66,8 @@ function PRICE_CHART( { id }) {
         <div className= 'svg-container'>
            <svg height={innerHeight} width={innerWidth} ref={svgRef}>
             <g transform={`translate(${margin.left},${margin.top})`}>
-            <AXISBOTTOM xScale={xScale} innerHeight= {innerHeight}/>
-            <AXISLEFT yScale={yScale} innerWidth= {innerWidth} />
+            <AXIS_BOTTOM xScale={xScale} innerHeight= {innerHeight}/>
+            <AXIS_LEFT yScale={yScale} innerWidth= {innerWidth} />
             <path
                 stroke='black'
                 fill='none'

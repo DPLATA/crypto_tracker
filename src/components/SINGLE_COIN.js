@@ -24,12 +24,12 @@ function SINGLE_COIN(props) {
         .then(res => {
             setCoin(res.data)
             setStatus(res.status)
-            //console.log(res.data)
+            console.log(res.data)
         })
         .catch(error => {
             console.log(error)
         })
-        }, [])
+        }, [SINGLE_API] )
 
         /*const stripHtml = (text) => {
             let doc = new DOMParser().parseFromString(text, 'text/html');
@@ -48,7 +48,7 @@ function SINGLE_COIN(props) {
                 <CircularProgress className='loading-bar'/>
             </div>:
             <div className= 'parent-grid'>
-                <h2 className = 'coin-name'> <img src={coin?.image?.small} alt='coin symbol'/> {coin?.name}</h2> 
+                <h2 className = 'coin-name'> <img src={coin?.image?.small} alt='coin representative symbol'/> {coin?.name}</h2> 
                 <div className= 'coin-price'> 
                     <h1> {coin?.market_data?.current_price?.usd} US$ </h1>
                     <p  className= {coin?.market_data?.price_change_percentage_24h > 0 ?

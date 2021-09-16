@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/SINGLE_BAR_STYLES.css'
 
-function SINGLE_BAR( {data, symbol} ) {
+function SINGLE_BAR( { data, symbol } ) {
 
     symbol = symbol.toUpperCase()
 

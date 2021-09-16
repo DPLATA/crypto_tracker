@@ -1,7 +1,7 @@
 import CENTRAL_HUB from './components/CENTRAL_HUB.js';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SINGLE_COIN from './components/SINGLE_COIN.js';
-import DARKMODEBUTTON from './components/DARKMODEBUTTON.js';
+import DARK_MODE_BUTTON from './components/DARK_MODE_BUTTON.js';
 import { useState } from 'react'
 import './App.css'
 
@@ -11,13 +11,13 @@ import './App.css'
 
 function App() {
 
-const [dark, setDark] = useState(false)
+const [darkMode, setDarkMode] = useState(false)
 
-const toggleDark = () => {
-  if (dark === false) {
-    setDark(true)
+const toggleDarkMode = () => {
+  if (darkMode === false) {
+    setDarkMode(true)
   } else {
-    setDark(false)
+    setDarkMode(false)
   }
 }
 
@@ -25,7 +25,7 @@ const toggleDark = () => {
   return (
     <Router>
     <div className="App">
-      <DARKMODEBUTTON toggledark={toggleDark} dark={dark}/>
+      <DARK_MODE_BUTTON toggleDarkMode={toggleDarkMode} darkModeEnable={darkMode}/>
       <Switch>
         <Route exact strict path="/"> 
           <CENTRAL_HUB/> 
