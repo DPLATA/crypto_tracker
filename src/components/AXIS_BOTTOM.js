@@ -6,12 +6,12 @@ function AXIS_BOTTOM({ xScale, innerHeight }) {
 
 	useEffect(() => {
 		const xAxisG = select(ref.current);
-		const xAxis = axisBottom(xScale).tickPadding(18);
+		const xAxis = axisBottom(xScale).tickArguments([7]).tickPadding(20).tickSize(0);
 		xAxisG.call(xAxis);
 	}, [xScale]);
 
 	return (
-		<g transform={`translate(0,${innerHeight - innerHeight / 7})`} ref={ref} />
+		<g className='axis-bottom' transform={`translate(0,${innerHeight - innerHeight / 7})`} ref={ref} />
 	);
 }
 

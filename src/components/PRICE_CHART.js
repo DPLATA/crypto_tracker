@@ -3,8 +3,9 @@ import axios from 'axios';
 import { scaleLinear, extent, scaleTime, line, curveNatural } from 'd3';
 import AXIS_BOTTOM from './AXIS_BOTTOM';
 import AXIS_LEFT from './AXIS_LEFT';
+import '../css/PRICE_CHART_STYLES.css';
 
-function PRICE_CHART({ id }) {
+function PRICE_CHART({ id, name }) {
 	const svgRef = useRef();
 
 	const [history, setHistory] = useState(null);
@@ -15,8 +16,8 @@ function PRICE_CHART({ id }) {
 
 	//const xValues = []
 	//const yValues = []
-	const innerWidth = window.innerWidth * 0.45;
-	const innerHeight = window.innerHeight / 2;
+	const innerWidth = window.innerWidth * 0.50;
+	const innerHeight = window.innerHeight / 1.7;
 	const margin = {
 		top: 10,
 		left: 50,
@@ -41,11 +42,11 @@ function PRICE_CHART({ id }) {
 
 	const yScale = scaleLinear()
 		.domain(extent(history.prices, yValue))
-		.range([innerHeight - 70, 0]);
+		.range([innerHeight - 70, 30]);
 
 	const xScale = scaleTime()
 		.domain(extent(history.prices, xValue))
-		.range([0, innerWidth]);
+		.range([0, innerWidth - 60]);
 
 	/*const svg = select(svgRef.current)
     const xAxis = axisBottom(xScale)
@@ -55,11 +56,10 @@ function PRICE_CHART({ id }) {
 		<div className='svg-container'>
 			<svg height={innerHeight} width={innerWidth} ref={svgRef}>
 				<g transform={`translate(${margin.left},${margin.top})`}>
+				<text x='0' y='15' className='chart-title'>{name} to USD Chart</text>
 					<AXIS_BOTTOM xScale={xScale} innerHeight={innerHeight} />
 					<AXIS_LEFT yScale={yScale} innerWidth={innerWidth} />
-					<path
-						stroke='black'
-						fill='none'
+					<path className='main-line'
 						d={line()
 							.x((d) => xScale(xValue(d)))
 							.y((d) => yScale(yValue(d)))

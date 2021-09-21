@@ -1,0 +1,31 @@
+.chart-title  {
+    fill: black;
+    font-weight: bold;
+}
+
+.main-line {
+    fill: none;
+    stroke: #A0B700;
+    stroke-width: 2;
+}
+
+.domain {
+    stroke: none
+}
+
+
+.tick > line {
+    stroke: #d8d6d5
+}
+
+.axis-bottom > .tick > text {
+    fill: #585757
+}
+
+.axis-bottom > .domain {
+    stroke: #d8d6d5
+}
+
+.axis-left > .tick > text {
+    fill: #585757;
+}
