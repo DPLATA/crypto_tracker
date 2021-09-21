@@ -33,20 +33,20 @@ function PRICE_CHART({ id, name }) {
 			.catch((err) => console.log(err));
 	}, [historyURL]);
 
-	if (!history) {
+		if (!history) {
 		return <pre>Loading...</pre>;
 	}
 
-	const xValue = (d) => d[0];
+				const xValue = (d) => d[0];
 	const yValue = (d) => d[1];
 
-	const yScale = scaleLinear()
-		.domain(extent(history.prices, yValue))
-		.range([innerHeight - 70, 30]);
+		const yScale = scaleLinear()
+	.domain(extent(history.prices, yValue))
+	.range([innerHeight - 70, 30]);
 
 	const xScale = scaleTime()
-		.domain(extent(history.prices, xValue))
-		.range([0, innerWidth - 60]);
+	.domain(extent(history.prices, xValue))
+	.range([0, innerWidth - 60]);
 
 	/*const svg = select(svgRef.current)
     const xAxis = axisBottom(xScale)
