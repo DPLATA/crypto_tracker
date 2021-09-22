@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SINGLE_COIN from './components/SINGLE_COIN.js';
 import DARK_MODE_BUTTON from './components/DARK_MODE_BUTTON.js';
 import { useState } from 'react';
+import NAV_BAR from './components/NAV_BAR.js'
 import './App.css';
 
 function App() {
@@ -18,11 +19,14 @@ function App() {
 
 	return (
 		<Router>
+			
 			<div className='App'>
+				<NAV_BAR />
 				<DARK_MODE_BUTTON
 					toggleDarkMode={toggleDarkMode}
 					darkModeEnable={darkMode}
 				/>
+
 				<Switch>
 					<Route exact strict path='/'>
 						<CENTRAL_HUB />

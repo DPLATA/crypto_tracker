@@ -1,0 +1,16 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    background: linear-gradient(#5e6e75, #2c3e50);
+    color: white;
+}
+
+.anchor {
+    color: white;
+}
+
+.nav > div {
+    margin-left: 0.2em;
+    margin-right: 0.7em;
+}

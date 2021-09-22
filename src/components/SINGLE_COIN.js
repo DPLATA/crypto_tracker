@@ -77,7 +77,7 @@ function SINGLE_COIN(props) {
 						<SINGLE_BAR data={coin.market_data} symbol={coin.symbol} />
 					</div>
 					<div className='chart-container'>
-						<PRICE_CHART id={id} />
+						<PRICE_CHART id={id} name={coin.name}/>
 					</div>
 				</div>
 			)}

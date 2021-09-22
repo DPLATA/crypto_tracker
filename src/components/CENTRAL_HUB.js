@@ -13,7 +13,6 @@ function CENTRAL_HUB() {
 		axios
 			.get(API_URL)
 			.then((res) => {
-				//TODO: remove console logs not necessarily right away but should not be there
 				console.log(res);
 				setCoins(res.data);
 			})
