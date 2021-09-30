@@ -21,16 +21,7 @@ function CENTRAL_HUB() {
 			});
 	}, []);
 
-	useEffect(() => {
-		axios
-			.get(API_URL)
-			.then((res) => {
-				setCoins(res.data);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-	}, []);
+	
 
 	return (
 		<div>

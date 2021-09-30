@@ -29,3 +29,14 @@
 .axis-left > .tick > text {
     fill: #585757;
 }
+
+.tooltip-info {
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.tooltip-box {
+    fill: rgba(82, 80, 80, 0.9);
+    z-index: 3;
+}
+    
