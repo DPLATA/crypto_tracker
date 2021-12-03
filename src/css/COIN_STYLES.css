@@ -1,59 +1,89 @@
 h1 {
-	margin: 0.5em;
+  margin: 0.5em;
 }
 
 h3 {
-	margin: 0.5em;
+  margin: 0.5em;
 }
 
 .Coin-grid {
-	display: grid;
-	grid-template-columns: 7fr;
-	grid-template-rows: auto;
-	margin: 5em;
+  margin: 3em;
+  overflow-x: scroll;
 }
 
 .headers {
-	grid-row: 1 / 2;
-	display: flex;
-	flex-basis: 100%;
-	height: 4em;
+  grid-row: 1 / 2;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  height: 4em;
 }
 
 .header-item {
-	flex-basis: 20%;
-	font-weight: bold;
+  flex-basis: 20%;
+  font-weight: bold;
 }
 .Coin-item {
-	grid-row: span 1;
-	display: flex;
-	flex-basis: 100%;
-	height: 4em;
-	border-width: 0.1px 0em;
-	border-style: solid;
-	border-color: lightgray;
-	padding: 1em;
+  grid-row: span 1;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  height: 4em;
+  border-width: 0.1px 0em;
+  border-style: solid;
+  border-color: lightgray;
+  padding: 1em;
+  overflow-x: scroll;
 }
 
 .Coin-item:hover {
-	background-color: rgba(249, 253, 223, 0.4);
+  background-color: rgba(249, 253, 223, 0.4);
 }
 
 .Coin-spec {
-	flex-basis: 20%;
+  grid-column: span 1 !important;
 }
 
 .Coin-image {
-	width: 20%;
-	height: auto;
+  width: 20%;
+  height: auto;
 }
 
 .anch {
-	text-decoration: none;
-	font-weight: bold;
-	color: black;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
 }
 
 .Coin-item > div {
-	font-weight: 450;
+  font-weight: 450;
+}
+
+@media (max-width: 800px) {
+  .media-hidden {
+    display: none;
+    visibility: hidden;
+  }
+
+  h1 {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  h3 {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .Coin-grid {
+    margin: 1em;
+    font-size: 0.7rem;
+    margin-top: 5em;
+  }
+
+  .headers {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .Coin-item {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

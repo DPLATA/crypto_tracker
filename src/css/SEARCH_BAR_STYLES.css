@@ -1,29 +1,61 @@
 .search-div {
-	position: absolute;
-	font-size: 0.9rem;
-	top: 3em;
-	left: 70%;
-	width: 30%;
-	height: 70%;
+  position: absolute;
+  font-size: 0.9rem;
+  top: 3em;
+  left: 70%;
+  width: 30%;
+  height: 70%;
 }
 
 .searchbar {
-	width: 70%;
-	background-color: gray;
-	color: whitesmoke;
-	font-weight: bold;
+  width: 80%;
+  height: 2em;
+  padding: 0.5em;
+  background-color: gray;
+  color: whitesmoke;
+  font-weight: bold;
+  border-radius: 2rem;
+  outline: none;
+  border: 1px solid lightblue;
 }
 
 .drop-search {
-	top: 0em;
-	background-color: white;
-	width: 70%;
-	max-height: 70%;
-	overflow: scroll;
-	border: 0.1em solid black;
+  top: 0em;
+  background-color: white;
+  width: 75%;
+  max-height: 70%;
+  overflow: scroll;
+  border: 0.1em solid lightgray;
+  border-radius: 1rem;
+  padding: 1em;
 }
 
 .search-coin {
-	margin: 0.1em;
-	padding: 0.1em;
+  margin: 0.4em;
+  padding: 0.1em;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1em;
+  align-items: center;
+}
+
+.search-name {
+  font-weight: bold;
+}
+
+.img-div {
+  justify-self: end;
+}
+
+.search-img {
+  width: 20%;
+  height: 100%;
+}
+
+@media (max-width: 800px) {
+  .search-div {
+    position: static;
+    width: 80%;
+    margin: auto;
+  }
 }

@@ -1,42 +1,40 @@
-.chart-title  {
-    fill: black;
-    font-weight: bold;
+.chart-title {
+  fill: black;
+  font-weight: bold;
 }
 
 .main-line {
-    fill: none;
-    stroke: #A0B700;
-    stroke-width: 2;
+  fill: none;
+  stroke: #a0b700;
+  stroke-width: 2;
 }
 
 .domain {
-    stroke: none
+  stroke: none;
 }
 
-
 .tick > line {
-    stroke: #d8d6d5
+  stroke: #d8d6d5;
 }
 
 .axis-bottom > .tick > text {
-    fill: #585757
+  fill: #585757;
 }
 
 .axis-bottom > .domain {
-    stroke: #d8d6d5
+  stroke: #d8d6d5;
 }
 
 .axis-left > .tick > text {
-    fill: #585757;
+  fill: #585757;
 }
 
 .tooltip-info {
-    font-weight: bold;
-    font-size: 0.8rem;
+  font-weight: bold;
+  font-size: 0.8rem;
 }
 
 .tooltip-box {
-    fill: rgba(82, 80, 80, 0.9);
-    z-index: 3;
+  fill: rgba(82, 80, 80, 0.9);
+  z-index: 3;
 }
-    

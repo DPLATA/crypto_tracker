@@ -1,7 +1,7 @@
 import React from 'react'
 import { timeFormat } from 'd3'
 
-function CHART_TOOLTIP({ prices, xScale, yScale, activeIndex }) {
+function CHART_TOOLTIP({ prices, xScale, yScale, activeIndex, width, height }) {
 
 
     const formatDate = timeFormat("%m/%d/%Y")
@@ -9,8 +9,10 @@ function CHART_TOOLTIP({ prices, xScale, yScale, activeIndex }) {
 
     
     return (
+        
         prices.map((item, index) => 
         <g key={index} >
+        
         <circle
             cx={xScale(item[0])}
             cy={yScale(item[1])}
@@ -20,10 +22,12 @@ function CHART_TOOLTIP({ prices, xScale, yScale, activeIndex }) {
             stroke="#fff"
             style={{ transition: "ease-out .1s" }}
         />
+        
         <g className='tooltip-box'>
+        
         <text 
             className= 'tooltip-info'
-            x={xScale(item[0])}
+            x={xScale(item[0]) > (xScale(item[0]))/2 + 1 ? xScale(item[0]) - 25 : xScale(item[0])}
             y={30}
             textAnchor="middle"
         >
@@ -31,13 +35,16 @@ function CHART_TOOLTIP({ prices, xScale, yScale, activeIndex }) {
         </text>
         <text 
             className= 'tooltip-info'
-            x={xScale(item[0])}
+            x={xScale(item[0]) > (xScale(item[0]))/2 + 1 ? xScale(item[0]) - 25 : xScale(item[0])}
             y={45}
             textAnchor="middle"
         >
             {index === activeIndex ? ` Date: ${formatDate(item[0])}` : ""}
         </text>
+    
         </g>
+        
+        
     </g>
     ))
             
