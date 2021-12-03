@@ -1,0 +1,23 @@
+.history-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.history-spec {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em;
+    border-top: 1px solid rgb(197, 196, 196);
+
+}
+
+.history-spec-title {
+    color:rgb(138, 135, 135);
+    font-weight: bold;
+}
+
+.history-spec-data {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
